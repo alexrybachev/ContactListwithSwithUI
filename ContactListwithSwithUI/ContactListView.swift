@@ -16,7 +16,7 @@ struct ContactListView: View {
     var body: some View {
         
         List(contacts, id: \.self) { contact in
-            NavigationLink(isActive: $isPresented, destination: {}) {
+            NavigationLink(destination: PersonContactView(person: contact)) {
                 Text("\(contact.fullName)")
                     .font(.system(size: 20))
                     .bold()

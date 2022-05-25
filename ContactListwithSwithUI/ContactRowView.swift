@@ -16,9 +16,10 @@ struct ContactRowView: View {
         HStack(spacing: 10) {
             Image(systemName: icon)
                 .resizable()
-                .frame(width: 30, height: 30)
+                .frame(width: 25, height: 25)
                 .foregroundColor(.blue)
             Text("\(title)")
+                .font(.system(size: 20))
             Spacer()
         }
         .frame(height: 50, alignment: .leading)

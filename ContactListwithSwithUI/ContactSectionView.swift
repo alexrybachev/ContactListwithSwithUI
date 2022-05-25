@@ -24,7 +24,7 @@ struct ContactSectionView: View {
             } header: {
                 Text("\(contact.fullName)")
                     .fontWeight(.bold)
-                    .font(.system(size: 16))
+                    .font(.system(size: 22))
             }
         }
         .navigationTitle("Contact List")
