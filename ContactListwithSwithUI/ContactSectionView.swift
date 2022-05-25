@@ -8,13 +8,31 @@
 import SwiftUI
 
 struct ContactSectionView: View {
+    
+    let contacts: [Person]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        List(contacts, id: \.self) { contact in
+            Section {
+                VStack {
+                    ContactRowView(icon: ImageForRow.phone.rawValue,
+                                   title: contact.phone)
+                    ContactRowView(icon: ImageForRow.tray.rawValue,
+                                   title: contact.email)
+                }
+            } header: {
+                Text("\(contact.fullName)")
+                    .fontWeight(.bold)
+                    .font(.system(size: 16))
+            }
+        }
+        .navigationTitle("Contact List")
     }
 }
 
 struct ContactSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactSectionView()
+        ContactSectionView(contacts: Person.getPersons())
     }
 }
