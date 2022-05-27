@@ -20,10 +20,11 @@ struct PersonContactView: View {
                     .frame(width: 200, height: 200)
                 Spacer()
             }
-            ContactRowView(icon: ImageForRow.phone.rawValue,
-                           title: person.phone)
-            ContactRowView(icon: ImageForRow.tray.rawValue,
-                           title: person.email)
+            
+            Label(person.phone, systemImage: ImageForRow.phone.rawValue)
+
+            Label(person.email, systemImage: ImageForRow.tray.rawValue)
+
         }
         .navigationTitle(person.fullName)
     }
