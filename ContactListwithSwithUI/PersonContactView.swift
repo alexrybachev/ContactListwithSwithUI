@@ -13,15 +13,17 @@ struct PersonContactView: View {
     
     var body: some View {
         Form {
-            VStack(spacing: 10) {
+            HStack(spacing: 10) {
+                Spacer()
                 Image(systemName: "person.fill")
                     .resizable()
                     .frame(width: 200, height: 200)
-                ContactRowView(icon: ImageForRow.phone.rawValue,
-                               title: person.phone)
-                ContactRowView(icon: ImageForRow.tray.rawValue,
-                               title: person.email)
+                Spacer()
             }
+            ContactRowView(icon: ImageForRow.phone.rawValue,
+                           title: person.phone)
+            ContactRowView(icon: ImageForRow.tray.rawValue,
+                           title: person.email)
         }
         .navigationTitle(person.fullName)
     }
