@@ -15,12 +15,10 @@ struct ContactSectionView: View {
         
         List(contacts, id: \.self) { contact in
             Section {
-                VStack {
-                    ContactRowView(icon: ImageForRow.phone.rawValue,
-                                   title: contact.phone)
-                    ContactRowView(icon: ImageForRow.tray.rawValue,
-                                   title: contact.email)
-                }
+                ContactRowView(icon: ImageForRow.phone.rawValue,
+                               title: contact.phone)
+                ContactRowView(icon: ImageForRow.tray.rawValue,
+                               title: contact.email)
             } header: {
                 Text("\(contact.fullName)")
                     .fontWeight(.bold)
