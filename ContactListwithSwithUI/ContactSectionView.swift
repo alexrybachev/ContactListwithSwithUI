@@ -13,17 +13,19 @@ struct ContactSectionView: View {
     
     var body: some View {
         
-        List(persons, id: \.self) { person in
-            Section {
-                Label(person.phone, systemImage: ImageForRow.phone.rawValue)
-                Label(person.email, systemImage: ImageForRow.tray.rawValue)
-            } header: {
-                Text(person.fullName)
-                    .fontWeight(.bold)
-                    .font(.system(size: 22))
+        NavigationView {
+            List(persons, id: \.self) { person in
+                Section {
+                    Label(person.phone, systemImage: ImageForRow.phone.rawValue)
+                    Label(person.email, systemImage: ImageForRow.tray.rawValue)
+                } header: {
+                    Text(person.fullName)
+                        .fontWeight(.bold)
+                        .font(.system(size: 22))
+                }
             }
+            .navigationTitle("Section List")
         }
-        .navigationTitle("Contact List")
     }
 }
 
