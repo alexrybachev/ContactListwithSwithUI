@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct ContactListView: View {
-    
-    @State private var isPresented = false
-    
-    let contacts: [Person]
+
+    let persons: [Person]
     
     var body: some View {
         
-        List(contacts, id: \.self) { contact in
-            NavigationLink(destination: PersonContactView(person: contact)) {
-                Text("\(contact.fullName)")
+        List(persons, id: \.self) { person in
+            NavigationLink(destination: PersonContactView(person: person)) {
+                Text(person.fullName)
                     .font(.system(size: 20))
                     .bold()
                     .frame(height: 50, alignment: .leading)
@@ -30,6 +28,6 @@ struct ContactListView: View {
 
 struct ContactListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactListView(contacts: Person.getPersons())
+        ContactListView(persons: Person.getPersons())
     }
 }

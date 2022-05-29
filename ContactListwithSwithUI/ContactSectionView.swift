@@ -9,18 +9,16 @@ import SwiftUI
 
 struct ContactSectionView: View {
     
-    let contacts: [Person]
+    let persons: [Person]
     
     var body: some View {
         
-        List(contacts, id: \.self) { contact in
+        List(persons, id: \.self) { person in
             Section {
-                ContactRowView(icon: ImageForRow.phone.rawValue,
-                               title: contact.phone)
-                ContactRowView(icon: ImageForRow.tray.rawValue,
-                               title: contact.email)
+                Label(person.phone, systemImage: ImageForRow.phone.rawValue)
+                Label(person.email, systemImage: ImageForRow.tray.rawValue)
             } header: {
-                Text("\(contact.fullName)")
+                Text(person.fullName)
                     .fontWeight(.bold)
                     .font(.system(size: 22))
             }
@@ -31,6 +29,6 @@ struct ContactSectionView: View {
 
 struct ContactSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactSectionView(contacts: Person.getPersons())
+        ContactSectionView(persons: Person.getPersons())
     }
 }

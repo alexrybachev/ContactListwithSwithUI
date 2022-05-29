@@ -22,7 +22,6 @@ struct PersonContactView: View {
             }
             
             Label(person.phone, systemImage: ImageForRow.phone.rawValue)
-
             Label(person.email, systemImage: ImageForRow.tray.rawValue)
 
         }
@@ -32,11 +31,6 @@ struct PersonContactView: View {
 
 struct PersonContactView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonContactView(
-            person: Person(firstName: "Name",
-                           lastName: "Surname",
-                           phone: "4547575",
-                           email: "sobaka@ru")
-        )
+        PersonContactView(person: Person.getPersons().first!)
     }
 }

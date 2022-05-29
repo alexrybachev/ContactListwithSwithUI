@@ -18,10 +18,6 @@ struct Person: Hashable {
         "\(firstName) \(lastName)"
     }
     
-    var rows: [String] {
-        [phone, email]
-    }
-    
     static func getPersons() -> [Person] {
         var persons: [Person] = []
         
